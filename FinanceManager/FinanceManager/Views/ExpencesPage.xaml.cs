@@ -15,7 +15,8 @@ namespace FinanceManager.Views
     {
 
         public ObservableCollection<string> BillListFilters { get; set; }
-        public Button CurrentCheck { get; set; } 
+        public Button CurrentCheck { get; set; }
+
         public ExpencesPage()
         {
             InitializeComponent();
@@ -44,14 +45,10 @@ namespace FinanceManager.Views
                     CurrentCheck.Style = (Style)Application.Current.Resources["MainButtonUnChecked"];
                 else
                     CurrentCheck.Style = (Style)Application.Current.Resources["MainButtonChecked"];
-                
-                CurrentCheck = btn;
-            }
-            else
-            {
-                CurrentCheck = btn;
+
             }
 
+            CurrentCheck = btn;
         }
     }
 }
