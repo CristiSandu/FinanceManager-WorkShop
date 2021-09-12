@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FinanceManager.Views.WelcomePage">
+             x:Class="FinanceManager.Views.WelcomePage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout Padding="0,16,0,16" >
             <Image Source="personal_finance.png" />
             <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="42">
                 <Label Text="Finance Manager" FontSize="36" FontAttributes="Bold" TextColor="{StaticResource AccentYellow}"/>
-                <Button Text="Get Started" CornerRadius="20" TextColor="{StaticResource BackgroundDark}" BackgroundColor="{StaticResource AccentYellow}" FontAttributes="Bold" FontSize="16" HorizontalOptions="Center" />
+                <Button x:Name="getStarted" Text="Get Started" CornerRadius="20" TextColor="{StaticResource BackgroundDark}" BackgroundColor="{StaticResource AccentYellow}" FontAttributes="Bold" FontSize="16" HorizontalOptions="Center" Clicked="getStarted_Clicked" />
             </StackLayout>
             <Label Text="powerd by MLSA UPB" FontAttributes="Italic" FontSize="12" HorizontalOptions="Center" TextColor="{StaticResource AccentYellow}"/>
         </StackLayout>

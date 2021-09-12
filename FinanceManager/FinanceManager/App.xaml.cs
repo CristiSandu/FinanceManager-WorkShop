@@ -10,7 +10,7 @@ namespace FinanceManager
         {
             InitializeComponent();
 
-            MainPage = new Views.WelcomePage();
+            MainPage = new NavigationPage(new Views.WelcomePage());
         }
 
         protected override void OnStart()

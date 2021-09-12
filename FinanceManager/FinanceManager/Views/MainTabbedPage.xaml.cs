@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace FinanceManager.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WelcomePage : ContentPage
+    public partial class MainTabbedPage : TabbedPage
     {
-        public WelcomePage()
+        public MainTabbedPage()
         {
             InitializeComponent();
-        }
-
-        private async void getStarted_Clicked(object sender, EventArgs e)
-        {
-           await Navigation.PushAsync(new MainTabbedPage());
         }
     }
 }
