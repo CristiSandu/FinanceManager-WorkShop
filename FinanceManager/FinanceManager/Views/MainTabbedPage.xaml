@@ -4,8 +4,17 @@
             x:Class="FinanceManager.Views.MainTabbedPage"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom" 
-            android:TabbedPage.IsSwipePagingEnabled="False">
-  <ContentPage Title="Tab 1" />
+            android:TabbedPage.IsSwipePagingEnabled="False"
+            NavigationPage.HasNavigationBar="False" 
+            xmlns:view="clr-namespace:FinanceManager.Views">
+
+    <NavigationPage Title="Bill" >
+        <x:Arguments>
+            <view:ExpencesPage/>
+        </x:Arguments>
+    </NavigationPage>
+    
+    
   <ContentPage Title="Tab 2" />
   <ContentPage Title="Tab 3" />
 </TabbedPage>
