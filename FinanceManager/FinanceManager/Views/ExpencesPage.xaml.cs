@@ -15,6 +15,7 @@ namespace FinanceManager.Views
     {
 
         public ObservableCollection<string> BillListFilters { get; set; }
+        public Button CurrentCheck { get; set; } 
         public ExpencesPage()
         {
             InitializeComponent();
@@ -30,6 +31,26 @@ namespace FinanceManager.Views
 
         private void Filter_Clicked(object sender, EventArgs e)
         {
+            Button btn = sender as Button;
+            if (btn.Style == (Style)Application.Current.Resources["MainButtonUnChecked"])
+                btn.Style = (Style)Application.Current.Resources["MainButtonChecked"];
+            else
+                btn.Style = (Style)Application.Current.Resources["MainButtonUnChecked"];
+
+
+            if (CurrentCheck != null)
+            {
+                if (CurrentCheck.Style == (Style)Application.Current.Resources["MainButtonChecked"])
+                    CurrentCheck.Style = (Style)Application.Current.Resources["MainButtonUnChecked"];
+                else
+                    CurrentCheck.Style = (Style)Application.Current.Resources["MainButtonChecked"];
+                
+                CurrentCheck = btn;
+            }
+            else
+            {
+                CurrentCheck = btn;
+            }
 
         }
     }

@@ -9,7 +9,7 @@
             <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="42">
                 <Label Text="Finance Manager" FontSize="36" FontAttributes="Bold" TextColor="{StaticResource AccentYellow}"/>
                 <Button x:Name="getStarted" Text="Get Started"   
-                        Style="{StaticResource MainButton}"
+                        Style="{StaticResource MainButtonUnChecked}"
                         Clicked="getStarted_Clicked" />
             </StackLayout>
             <Label Text="powerd by MLSA UPB" FontAttributes="Italic" FontSize="12" HorizontalOptions="Center" TextColor="{StaticResource AccentYellow}"/>

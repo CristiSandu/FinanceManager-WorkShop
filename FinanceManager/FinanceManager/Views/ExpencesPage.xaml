@@ -13,7 +13,7 @@
         <StackLayout BindableLayout.ItemsSource="{Binding BillListFilters}" Orientation="Horizontal" HorizontalOptions="Center">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
-                    <Button Text="{Binding .}" Style="{StaticResource MainButton}" Clicked="Filter_Clicked"/>
+                    <Button Text="{Binding .}" Style="{StaticResource MainButtonUnChecked}" Clicked="Filter_Clicked"/>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
         </StackLayout>
