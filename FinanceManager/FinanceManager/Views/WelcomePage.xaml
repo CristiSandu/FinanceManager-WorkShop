@@ -8,7 +8,9 @@
             <Image Source="personal_finance.png" />
             <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="42">
                 <Label Text="Finance Manager" FontSize="36" FontAttributes="Bold" TextColor="{StaticResource AccentYellow}"/>
-                <Button x:Name="getStarted" Text="Get Started" CornerRadius="20" TextColor="{StaticResource BackgroundDark}" BackgroundColor="{StaticResource AccentYellow}" FontAttributes="Bold" FontSize="16" HorizontalOptions="Center" Clicked="getStarted_Clicked" />
+                <Button x:Name="getStarted" Text="Get Started"   
+                        Style="{StaticResource MainButton}"
+                        Clicked="getStarted_Clicked" />
             </StackLayout>
             <Label Text="powerd by MLSA UPB" FontAttributes="Italic" FontSize="12" HorizontalOptions="Center" TextColor="{StaticResource AccentYellow}"/>
         </StackLayout>

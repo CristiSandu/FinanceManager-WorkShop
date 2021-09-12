@@ -9,11 +9,18 @@
         <ToolbarItem  x:Name="presentsPaths" Order="Secondary" Text="Paths" />
     </ContentPage.ToolbarItems>
     
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <StackLayout Padding="12">
+        <StackLayout BindableLayout.ItemsSource="{Binding BillListFilters}" Orientation="Horizontal" HorizontalOptions="Center">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Button Text="{Binding .}" Style="{StaticResource MainButton}" Clicked="Filter_Clicked"/>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
         </StackLayout>
-    </ContentPage.Content>
+        <CollectionView>
+            
+            
+            
+        </CollectionView>
+    </StackLayout>
 </ContentPage>
