@@ -5,7 +5,7 @@
              Title="Expences">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem  x:Name="presentPerson" Order="Primary" Text="+" />
+        <ToolbarItem  x:Name="addTransaction" Order="Primary" Text="+" Clicked="addTransaction_Clicked" />
         <ToolbarItem  x:Name="presentsPaths" Order="Secondary" Text="Paths" />
     </ContentPage.ToolbarItems>
 

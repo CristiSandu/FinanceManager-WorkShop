@@ -37,7 +37,7 @@ namespace FinanceManager.Services
         }
 
 
-        public static async Task<IEnumerable<Account>> GetAccounts()
+        public static async Task<List<Account>> GetAccounts()
         {
             await Init();
 
@@ -60,14 +60,14 @@ namespace FinanceManager.Services
         public static async Task<IEnumerable<Transaction>> GetIncomeTransactions()
         {
             await Init();
-            var trans = await db.QueryAsync<Transaction>($"SELECT * FROM Transaction WHERE Type = income");
+            var trans = await db.QueryAsync<Transaction>($"SELECT * FROM Transaction WHERE Type = Income");
             return trans;
         }
 
         public static async Task<IEnumerable<Transaction>> GetExpensesTransactions()
         {
             await Init();
-            var trans = await db.QueryAsync<Transaction>($"SELECT * FROM Transaction WHERE Type = expenses");
+            var trans = await db.QueryAsync<Transaction>($"SELECT * FROM Transaction WHERE Type = Expense");
             return trans;
         }
     }

@@ -50,5 +50,10 @@ namespace FinanceManager.Views
 
             CurrentCheck = btn;
         }
+
+        private async void addTransaction_Clicked(object sender, EventArgs e)
+        {
+          await Navigation.PushAsync(new AddTransactionPage());
+        }
     }
 }
