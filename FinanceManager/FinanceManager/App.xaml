@@ -25,7 +25,7 @@
             <Style x:Key="MainButtonChecked" TargetType="Button">
                 <Setter Property="CornerRadius" Value="20" />
                 <Setter Property="TextColor" Value="{StaticResource AccentYellow}" />
-                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundDark}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="BorderColor" Value="{StaticResource AccentYellow}"/>
                 <Setter Property="BorderWidth" Value="2"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
@@ -46,6 +46,15 @@
                 <Setter Property="VerticalOptions" Value="Center"/>
             </Style>
 
+            <Style x:Key="TransactionListStyle" TargetType="Frame">
+                <Setter Property="BorderColor" Value="{StaticResource AccentYellow}" />
+                <Setter Property="Padding" Value="10,10,10,10" />
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource AccentYellow}"/>
+                <Setter Property="Opacity" Value="1"/>
+                <Setter Property="HasShadow" Value="True"/>
+
+            </Style>
 
         </ResourceDictionary>
     </Application.Resources>

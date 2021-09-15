@@ -11,6 +11,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Img\arrow-down.svg" />
+    <None Remove="Img\arrow-up.svg" />
     <None Remove="Img\personal_finance.svg" />
   </ItemGroup>
 
@@ -26,6 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <SharedImage Include="Img\arrow-down.svg" BaseSize="21, 21" />
+    <SharedImage Include="Img\arrow-up.svg" BaseSize="21, 21"/>
     <SharedImage Include="Img\personal_finance.svg" BaseSize="320, 320" />
   </ItemGroup>
 

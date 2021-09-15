@@ -2,25 +2,108 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinanceManager.Views.ExpencesPage"
+             xmlns:converter ="clr-namespace:FinanceManager.Convertors"
              Title="Expences">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:TransactionTypeConvertor x:Key="transactionTypeConvertor"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
         <ToolbarItem  x:Name="addTransaction" Order="Primary" Text="+" Clicked="addTransaction_Clicked" />
-        <ToolbarItem  x:Name="presentsPaths" Order="Secondary" Text="Paths" />
+        <ToolbarItem  x:Name="hideFilters" Order="Secondary" Text="-" Clicked="hideFilters_Clicked" />
     </ContentPage.ToolbarItems>
 
-    <StackLayout Padding="12">
-        <StackLayout BindableLayout.ItemsSource="{Binding BillListFilters}" Orientation="Horizontal" HorizontalOptions="Center">
-            <BindableLayout.ItemTemplate>
+    <StackLayout Padding="12" Spacing="12">
+        <Frame CornerRadius="20" BackgroundColor="Transparent" BorderColor="{StaticResource AccentYellow}" Padding="8">
+            <StackLayout >
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HeightRequest="26" Padding="5,0,0,0">
+                    <Label Text="Filters" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" Padding="0,-3,0,0"/>
+                    <Button x:Name="hideButton" Text="-" FontAttributes="Bold" FontSize="24" TextTransform="Uppercase" CornerRadius="20" Padding="-5" BackgroundColor="Transparent" BorderWidth="2" BorderColor="{StaticResource AccentDarkGreen}" TextColor="{StaticResource AccentDarkGreen}" HeightRequest="26" Clicked="hideFilters_Clicked" HorizontalOptions="EndAndExpand" WidthRequest="26"/>
+                </StackLayout>
+                <FlexLayout x:Name="filtersList" BindableLayout.ItemsSource="{Binding BillListFilters}" Wrap="Wrap"
+                            VerticalOptions="Start"  JustifyContent="Start"  AlignItems="Start" >
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="5,5,5,5">
+                                <Button Text="{Binding .}" Style="{StaticResource MainButtonUnChecked}"  Clicked="Filter_Clicked"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+            </StackLayout>
+        </Frame>
+        <CollectionView x:Name="expemcesList" 
+                        SelectionMode="Single" 
+                        ItemsSource="{Binding Expences}" 
+                        SelectionChanged="expemcesList_SelectionChanged" >
+
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="1" HorizontalItemSpacing="7" VerticalItemSpacing="7"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Button Text="{Binding .}" Style="{StaticResource MainButtonUnChecked}" Clicked="Filter_Clicked"/>
+                    <Frame Style="{StaticResource TransactionListStyle}" Padding="5,5,2,5"  >
+
+                        <Grid Padding="10,10,10,10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.5*" />
+                                <ColumnDefinition Width="1.5*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding Name}"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="{StaticResource BackgroundDark}"
+                                   Style="{StaticResource TitleStyle}"/>
+
+                            <Label Grid.Row="1"
+                                   HorizontalOptions="StartAndExpand"
+                                   Text="{Binding Date,StringFormat='{0:dd/MM/yyyy}'}"
+                                   TextColor="{StaticResource BackgroundDark}"
+                                   
+                                   FontSize="Small"
+                                   FontAttributes="Bold"
+                                   Style="{StaticResource TitleStyle}"
+                                   VerticalOptions="End"/>
+
+                            <Label Grid.Row="1"
+                                   Grid.Column="1"
+                                   
+                                   Text="{Binding Path=Category}"
+                                   TextColor="{StaticResource BackgroundDark}"
+                                   HorizontalOptions="Start"
+                                   FontAttributes="Bold"
+                                   FontSize="Small"
+                                   Style="{StaticResource TitleStyle}"/>
+
+                            <Label Grid.RowSpan="2"
+                                   Grid.Column="2"
+                                   HorizontalOptions="EndAndExpand"
+                                   Text="{Binding Path=Price,StringFormat='{0:F2} Lei'}"
+                                   TextColor="{StaticResource BackgroundDark}"
+                                   
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   Style="{StaticResource TitleStyle}"/>
+
+                            <Image Grid.RowSpan="2"
+                                   Grid.Column="3" Source="{Binding Type, Converter={StaticResource transactionTypeConvertor}}"/>
+                        </Grid>
+                    </Frame>
                 </DataTemplate>
-            </BindableLayout.ItemTemplate>
-        </StackLayout>
-        <CollectionView>
-
-
-
+            </CollectionView.ItemTemplate>
         </CollectionView>
     </StackLayout>
 </ContentPage>

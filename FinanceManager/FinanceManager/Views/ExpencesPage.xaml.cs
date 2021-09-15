@@ -15,6 +15,8 @@ namespace FinanceManager.Views
     {
 
         public ObservableCollection<string> BillListFilters { get; set; }
+        public ObservableCollection<Models.Transaction> TransactionsList { get; set; }
+
         public Button CurrentCheck { get; set; }
 
         public ExpencesPage()
@@ -25,9 +27,21 @@ namespace FinanceManager.Views
             {
                 "Income",
                 "Expences",
+                "Global",
+                "Global",
+                "Global",
+                "Global",
+                "Global",
+                "Global",
                 "Global"
             };
             BindingContext = this;
+        }
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            TransactionsList = new ObservableCollection<Models.Transaction>(await Services.DatabaseConnection.GetGlobalTransactions());
+            expemcesList.ItemsSource = TransactionsList;
         }
 
         private void Filter_Clicked(object sender, EventArgs e)
@@ -47,13 +61,31 @@ namespace FinanceManager.Views
                     CurrentCheck.Style = (Style)Application.Current.Resources["MainButtonChecked"];
 
             }
-
+            
             CurrentCheck = btn;
         }
 
         private async void addTransaction_Clicked(object sender, EventArgs e)
         {
-          await Navigation.PushAsync(new AddTransactionPage());
+            await Navigation.PushAsync(new AddTransactionPage());
+        }
+
+        private void expemcesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void hideFilters_Clicked(object sender, EventArgs e)
+        {
+            if (filtersList.IsVisible)
+                filtersList.IsVisible = false;
+            else
+                filtersList.IsVisible = true;
+        }
+
+        private void hideButton_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }
