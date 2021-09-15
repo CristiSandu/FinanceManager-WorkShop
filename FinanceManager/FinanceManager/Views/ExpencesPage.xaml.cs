@@ -28,12 +28,6 @@ namespace FinanceManager.Views
                 "Income",
                 "Expences",
                 "Global",
-                "Global",
-                "Global",
-                "Global",
-                "Global",
-                "Global",
-                "Global"
             };
             BindingContext = this;
         }
@@ -44,7 +38,7 @@ namespace FinanceManager.Views
             expemcesList.ItemsSource = TransactionsList;
         }
 
-        private void Filter_Clicked(object sender, EventArgs e)
+        private async void Filter_Clicked(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             if (btn.Style == (Style)Application.Current.Resources["MainButtonUnChecked"])
@@ -52,6 +46,15 @@ namespace FinanceManager.Views
             else
                 btn.Style = (Style)Application.Current.Resources["MainButtonUnChecked"];
 
+            if (btn.Text == "Income")
+                TransactionsList = new ObservableCollection<Models.Transaction>(await Services.DatabaseConnection.GetIncomeTransactions());
+            else if (btn.Text == "Expences")
+                TransactionsList = new ObservableCollection<Models.Transaction>(await Services.DatabaseConnection.GetExpensesTransactions());
+            else
+                TransactionsList = new ObservableCollection<Models.Transaction>(await Services.DatabaseConnection.GetGlobalTransactions());
+
+            expemcesList.ItemsSource = TransactionsList;
+            selectedFilter.Text = btn.Text;
 
             if (CurrentCheck != null)
             {
@@ -59,9 +62,8 @@ namespace FinanceManager.Views
                     CurrentCheck.Style = (Style)Application.Current.Resources["MainButtonUnChecked"];
                 else
                     CurrentCheck.Style = (Style)Application.Current.Resources["MainButtonChecked"];
-
             }
-            
+
             CurrentCheck = btn;
         }
 
@@ -78,14 +80,15 @@ namespace FinanceManager.Views
         private void hideFilters_Clicked(object sender, EventArgs e)
         {
             if (filtersList.IsVisible)
+            {
                 filtersList.IsVisible = false;
+                selectedFilter.IsVisible = true;
+            }
             else
+            {
                 filtersList.IsVisible = true;
-        }
-
-        private void hideButton_Clicked(object sender, EventArgs e)
-        {
-
+                selectedFilter.IsVisible = false;
+            }
         }
     }
 }

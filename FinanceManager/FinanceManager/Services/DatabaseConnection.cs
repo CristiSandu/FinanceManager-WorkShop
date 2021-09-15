@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FinanceManager.Models;
@@ -60,14 +61,16 @@ namespace FinanceManager.Services
         public static async Task<IEnumerable<Transaction>> GetIncomeTransactions()
         {
             await Init();
-            var trans = await db.QueryAsync<Transaction>($"SELECT * FROM Transaction WHERE Type = Income");
+            var trans = await db.QueryAsync<Transaction>($"SELECT * FROM \"Transaction\" WHERE Type = \"Income\"");
             return trans;
         }
 
         public static async Task<IEnumerable<Transaction>> GetExpensesTransactions()
         {
             await Init();
-            var trans = await db.QueryAsync<Transaction>($"SELECT * FROM Transaction WHERE Type = Expense");
+            string query = "SELECT * FROM \"Transaction\" WHERE Type = \"Expense\"";
+            var trans = await db.QueryAsync<Transaction>(query);
+            var trans_list = trans.ToList();
             return trans;
         }
     }
