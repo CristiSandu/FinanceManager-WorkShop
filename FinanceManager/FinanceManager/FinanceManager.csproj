@@ -13,7 +13,10 @@
   <ItemGroup>
     <None Remove="Img\arrow-down.svg" />
     <None Remove="Img\arrow-up.svg" />
+    <None Remove="Img\bar-chart-2.svg" />
+    <None Remove="Img\dollar-sign.svg" />
     <None Remove="Img\personal_finance.svg" />
+    <None Remove="Img\shopping-bag.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,8 +32,11 @@
 
   <ItemGroup>
     <SharedImage Include="Img\arrow-down.svg" BaseSize="21, 21" />
-    <SharedImage Include="Img\arrow-up.svg" BaseSize="21, 21"/>
+    <SharedImage Include="Img\arrow-up.svg" BaseSize="21, 21" />
+    <SharedImage Include="Img\bar-chart-2.svg" BaseSize="35, 35"/>
+    <SharedImage Include="Img\dollar-sign.svg" BaseSize="35, 35"/>
     <SharedImage Include="Img\personal_finance.svg" BaseSize="320, 320" />
+    <SharedImage Include="Img\shopping-bag.svg" BaseSize="35, 35"/>
   </ItemGroup>
 
   <ItemGroup>
