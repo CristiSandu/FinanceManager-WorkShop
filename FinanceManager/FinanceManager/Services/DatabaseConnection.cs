@@ -73,5 +73,15 @@ namespace FinanceManager.Services
             var trans_list = trans.ToList();
             return trans;
         }
+
+        public static async Task<float> GetFunctionResult(string query)
+        {
+            await Init();
+            // "SELECT SUM(Price) FROM \"Transaction\" WHERE Type = \"Income\"" get sum from Income
+            // "SELECT SUM(Price) FROM \"Transaction\" WHERE Type = \"Expense\"" get sum from Expense
+
+            var incomeSum = await db.ExecuteScalarAsync<float>(query);
+            return incomeSum;
+        }
     }
 }

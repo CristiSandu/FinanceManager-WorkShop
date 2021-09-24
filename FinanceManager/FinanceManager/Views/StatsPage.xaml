@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="FinanceManager.Views.StatsPage"
+             Title="Stats">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  x:Name="settings" Order="Primary" Text="Settings"  />
+        <ToolbarItem  x:Name="seconsbutton" Order="Secondary" Text="-"  />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Spacing="15">
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="4,8,4,0" >
+                <Button  Text="&lt;" FontAttributes="Bold" FontSize="Large" Command="{Binding PrevMonth}"  
+                        Style="{Binding ColorPrevButton}"
+                        HorizontalOptions="StartAndExpand"/>
+                <Label  Text="{Binding CurrentShowDate, StringFormat='{0:MMMM yyyy}'}" VerticalOptions="CenterAndExpand" Style="{StaticResource TitleStyle}"/>
+                <Button Text="&gt;" FontSize="Large" FontAttributes="Bold"  Command="{Binding NextMonth}"  
+                        Style="{Binding ColorNextButton}"
+                        HorizontalOptions="EndAndExpand" />
+
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="26" >
+                <Button Text="OverView" Style="{StaticResource MainButtonUnChecked}" Clicked="Button_Clicked"/>
+                <Button Text="Incoms" Style="{StaticResource MainButtonUnChecked}" Clicked="Button_Clicked"/>
+                <Button Text="Expences" Style="{StaticResource MainButtonUnChecked}" Clicked="Button_Clicked"/>
+
+            </StackLayout>
+
+            <StackLayout Padding="20">
+                <Frame  HeightRequest="350" WidthRequest="350" CornerRadius="10" BackgroundColor="{StaticResource AccentYellow}" >
+                    <StackLayout>
+                        <microcharts:ChartView x:Name="chartView" HeightRequest ="350" WidthRequest="350" Chart="{Binding GrafData}" />
+                    </StackLayout>
+                </Frame>
+                <Frame   CornerRadius="10" BackgroundColor="{StaticResource AccentYellow}" >
+                    <Label Style="{StaticResource TitleStyle}" TextColor="{StaticResource BackgroundDark}" Text="{Binding Path=Balance,StringFormat='Balance: {0:N2} Lei'}"/>
+                </Frame>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

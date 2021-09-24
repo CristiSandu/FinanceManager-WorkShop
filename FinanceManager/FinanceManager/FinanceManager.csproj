@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
     <PackageReference Include="Resizetizer.NT" Version="0.2.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
@@ -27,16 +28,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <SharedImage Include="Img\arrow-down.svg" BaseSize="21, 21" />
     <SharedImage Include="Img\arrow-up.svg" BaseSize="21, 21" />
-    <SharedImage Include="Img\bar-chart-2.svg" BaseSize="35, 35"/>
-    <SharedImage Include="Img\dollar-sign.svg" BaseSize="35, 35"/>
+    <SharedImage Include="Img\bar-chart-2.svg" BaseSize="35, 35" />
+    <SharedImage Include="Img\dollar-sign.svg" BaseSize="35, 35" />
     <SharedImage Include="Img\personal_finance.svg" BaseSize="320, 320" />
-    <SharedImage Include="Img\shopping-bag.svg" BaseSize="35, 35"/>
+    <SharedImage Include="Img\shopping-bag.svg" BaseSize="35, 35" />
   </ItemGroup>
 
   <ItemGroup>
@@ -47,6 +44,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MainTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\StatsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\WelcomePage.xaml">

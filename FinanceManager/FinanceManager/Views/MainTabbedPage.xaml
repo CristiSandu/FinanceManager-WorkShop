@@ -13,8 +13,13 @@
             <view:ExpencesPage/>
         </x:Arguments>
     </NavigationPage>
-    
-    
-  <ContentPage Title="Tab 2" IconImageSource="bar-chart-2.png" />
-  <ContentPage Title="Tab 3" IconImageSource="dollar-sign.png"/>
+
+    <NavigationPage Title="Stats" IconImageSource="bar-chart-2.png" >
+        <x:Arguments>
+            <view:StatsPage/>
+        </x:Arguments>
+    </NavigationPage>
+
+
+  <ContentPage Title="Cards" IconImageSource="dollar-sign.png"/>
 </TabbedPage>

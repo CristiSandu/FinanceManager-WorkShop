@@ -34,8 +34,12 @@ namespace FinanceManager.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            TransactionsList = new ObservableCollection<Models.Transaction>(await Services.DatabaseConnection.GetGlobalTransactions());
-            expemcesList.ItemsSource = TransactionsList;
+            
+            if (CurrentCheck == null)
+            {
+                TransactionsList = new ObservableCollection<Models.Transaction>(await Services.DatabaseConnection.GetGlobalTransactions());
+                expemcesList.ItemsSource = TransactionsList;
+            }
         }
 
         private async void Filter_Clicked(object sender, EventArgs e)

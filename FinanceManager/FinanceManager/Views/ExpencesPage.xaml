@@ -5,7 +5,7 @@
              xmlns:converter ="clr-namespace:FinanceManager.Convertors"
              Title="Expences">
 
-
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <converter:TransactionTypeConvertor x:Key="transactionTypeConvertor"/>
