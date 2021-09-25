@@ -36,7 +36,10 @@
                     </StackLayout>
                 </Frame>
                 <Frame   CornerRadius="10" BackgroundColor="{StaticResource AccentYellow}" >
-                    <Label Style="{StaticResource TitleStyle}" TextColor="{StaticResource BackgroundDark}" Text="{Binding Path=Balance,StringFormat='Balance: {0:N2} Lei'}"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Style="{StaticResource TitleStyle}" TextColor="{StaticResource BackgroundDark}" Text="{Binding Path=TotalMessage}" />
+                        <Label Style="{StaticResource TitleStyle}" TextColor="{Binding BalanceColor}" Text="{Binding Path=Balance,StringFormat='{}{0:+#;-#;} Lei'}"/>
+                    </StackLayout>
                 </Frame>
 
             </StackLayout>

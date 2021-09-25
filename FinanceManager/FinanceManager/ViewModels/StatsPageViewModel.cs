@@ -23,21 +23,36 @@ namespace FinanceManager.ViewModels
                 if (_currentAppliedFilter != value)
                 {
                     _currentAppliedFilter = value;
-                        ApplyeOverView.Execute(value);
+                    ApplyeOverView.Execute(value);
                     OnPropertyChanged(nameof(CurrentAppliedFilter));
                 }
             }
         }
-        private float _balance;
 
-        public float Balance {
+        private float _balance;
+        public float Balance
+        {
             get { return _balance; }
             set
             {
                 if (_balance != value)
                 {
                     _balance = value;
-                    OnPropertyChanged(nameof(CurrentAppliedFilter));
+                    OnPropertyChanged(nameof(Balance));
+                }
+            }
+        }
+
+        private string _totalMessage;
+        public string TotalMessage
+        {
+            get { return _totalMessage; }
+            set
+            {
+                if (_totalMessage != value)
+                {
+                    _totalMessage = value;
+                    OnPropertyChanged(nameof(TotalMessage));
                 }
             }
         }
@@ -93,14 +108,53 @@ namespace FinanceManager.ViewModels
         }
 
 
-        public async void ValueChangeMethod(string grafType )
+        public float IncomeSum { get; set; }
+        public float ExpencesSum { get; set; }
+
+        private Color _balanceColor;
+        public Color BalanceColor
+        {
+            get { return _balanceColor; }
+            set
+            {
+                if (_balanceColor != value)
+                    _balanceColor = value;
+                OnPropertyChanged(nameof(BalanceColor));
+            }
+        }
+
+        public async void ValueChangeMethod(string grafType)
         {
             if (grafType == "OverView")
+            {
                 GrafData = await Services.ChartGenerator.GetOverView(CurrentShowDate);
+                Balance = IncomeSum - ExpencesSum;
+                if (Balance < 0)
+                {
+                    BalanceColor = Color.Red;
+                }
+                else
+                {
+                    BalanceColor = Color.Green;
+                }
+                TotalMessage = "Balance: ";
+            }
             else if (grafType == "Incoms")
+            {
                 GrafData = await Services.ChartGenerator.GetIncomesGraf(CurrentShowDate);
+                Balance = IncomeSum;
+                BalanceColor = (Color)Application.Current.Resources["BackgroundDark"];
+                TotalMessage = "Total: ";
+            }
             else if (grafType == "Expences")
+            {
                 GrafData = await Services.ChartGenerator.GetExpencesCategory(CurrentShowDate);
+                Balance = ExpencesSum;
+                BalanceColor = (Color)Application.Current.Resources["BackgroundDark"];
+
+                TotalMessage = "Total: ";
+            }
+
 
             OnPropertyChanged(nameof(GrafData));
         }
@@ -110,9 +164,19 @@ namespace FinanceManager.ViewModels
             Task.Run(async () =>
             {
                 GrafData = await Services.ChartGenerator.GetOverView(CurrentShowDate);
-                var incomeSum = await Services.DatabaseConnection.GetFunctionResult($"SELECT SUM(Price) FROM \"Transaction\" WHERE Type = \"Income\" ");
-                var expenseSum = await Services.DatabaseConnection.GetFunctionResult($"SELECT SUM(Price) FROM \"Transaction\" WHERE Type = \"Expense\" ");
-                Balance = incomeSum - expenseSum;
+                IncomeSum = await Services.DatabaseConnection.GetFunctionResult($"SELECT SUM(Price) FROM \"Transaction\" WHERE Type = \"Income\" ");
+                ExpencesSum = await Services.DatabaseConnection.GetFunctionResult($"SELECT SUM(Price) FROM \"Transaction\" WHERE Type = \"Expense\" ");
+                Balance = IncomeSum - ExpencesSum;
+                if (Balance < 0)
+                {
+                    BalanceColor = Color.Red;
+                }
+                else
+                {
+                    BalanceColor = Color.Green;
+                }
+
+                TotalMessage = "Balance: ";
             }).Wait();
 
             NextMonth = new Command(async =>
@@ -127,7 +191,7 @@ namespace FinanceManager.ViewModels
 
                     if (CurrentShowDate.Month == dt.Month)
                         ColorNextButton = (Style)Application.Current.Resources["MainButtonChecked"];
-                   ValueChangeMethod(CurrentAppliedFilter);
+                    ValueChangeMethod(CurrentAppliedFilter);
                 }
             });
 

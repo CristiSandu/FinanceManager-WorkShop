@@ -10,6 +10,17 @@
             <Color x:Key="AccentLitePurple">#706993</Color>
             <Color x:Key="AccentDarkPurple">#331E38</Color>
 
+            <Color x:Key="ChartColor1">#FF0000</Color>
+            <Color x:Key="ChartColor2">#FF8700</Color>
+            <Color x:Key="ChartColor3">#FFD300</Color>
+            <Color x:Key="ChartColor4">#DEFF0A</Color>
+            <Color x:Key="ChartColor5">#A1FF0A</Color>
+            <Color x:Key="ChartColor6">#0AFF99</Color>
+            <Color x:Key="ChartColor7">#0AEFFF</Color>
+            <Color x:Key="ChartColor8">#147DF5</Color>
+            <Color x:Key="ChartColor9">#580AFF</Color>
+            <Color x:Key="ChartColor10">#BE0AFF</Color>
+
             <Color x:Key="BackgroundDark">#2E2E2E</Color>
             <Color x:Key="BackgroundLight">#FAFAFA</Color>
 
@@ -53,9 +64,7 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource AccentYellow}"/>
                 <Setter Property="Opacity" Value="1"/>
                 <Setter Property="HasShadow" Value="True"/>
-
             </Style>
-
         </ResourceDictionary>
     </Application.Resources>
 </Application>
