@@ -20,6 +20,9 @@
         </x:Arguments>
     </NavigationPage>
 
-
-  <ContentPage Title="Cards" IconImageSource="dollar-sign.png"/>
+    <NavigationPage Title="Cards" IconImageSource="dollar-sign.png" >
+        <x:Arguments>
+            <view:AccountsPage/>
+        </x:Arguments>
+    </NavigationPage>
 </TabbedPage>

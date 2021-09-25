@@ -73,7 +73,6 @@
                                    HorizontalOptions="StartAndExpand"
                                    Text="{Binding Date,StringFormat='{0:dd/MM/yyyy}'}"
                                    TextColor="{StaticResource BackgroundDark}"
-                                   
                                    FontSize="Small"
                                    FontAttributes="Bold"
                                    Style="{StaticResource TitleStyle}"

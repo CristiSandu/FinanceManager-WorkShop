@@ -21,31 +21,8 @@ namespace FinanceManager.Services
             db = new SQLiteAsyncConnection(databasePath);
 
             await db.CreateTableAsync<Models.Transaction>();
-            await db.CreateTableAsync<Models.Account>();
         }
-
-        public static async Task AddAccount(string name, float balance)
-        {
-            await Init();
-
-            var acc = new Account
-            {
-                Name = name,
-                Balance = balance,
-            };
-
-            await db.InsertAsync(acc);
-        }
-
-
-        public static async Task<List<Account>> GetAccounts()
-        {
-            await Init();
-
-            return await db.Table<Account>().ToListAsync();
-        }
-
-
+      
         public static async Task AddTransaction(Transaction transaction)
         {
             await Init();
@@ -82,6 +59,32 @@ namespace FinanceManager.Services
 
             var incomeSum = await db.ExecuteScalarAsync<float>(query);
             return incomeSum;
+        }
+
+        public static async Task<List<Account>> GetAccounts()
+        {
+            await Init();
+            string query = "SELECT Account as Name ,SUM(Price) as Balance FROM \"Transaction\"  WHERE Type = \"Income\" GROUP BY Account";
+            var trans = await db.QueryAsync<Account>(query);
+
+            string query2 = "SELECT Account as Name ,SUM(Price) as Balance FROM \"Transaction\" WHERE Type = \"Expense\" GROUP BY Account ";
+            var trans2 = await db.QueryAsync<Account>(query2);
+
+
+
+            foreach (Account income in trans)
+            {
+                foreach (Account outcome in trans2)
+                {
+                    if (income.Name == outcome.Name)
+                    {
+                        income.Balance -= outcome.Balance;
+                    }
+                }
+            }
+
+            var trans_list = trans.ToList();
+            return trans_list;
         }
     }
 }
