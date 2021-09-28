@@ -76,4 +76,4 @@ We will go through many notes. From the most introductory to the most complex an
   - [DevBlog - Tutorial](https://devblogs.microsoft.com/xamarin/microcharts-elegant-cross-platform-charts-for-any-app/)
   - [Gerald Versluis](https://www.youtube.com/channel/UCBBZ2kXWmd8eXlHg2wEaClw) - [Tutorial](https://www.youtube.com/watch?v=tLDxMKub5WA)
 
-_powerd by MLSA_
+_powerd by [MLSA UPB](https://facebook.com/profile.php?id=156173461134517&ref=content_filter)_
