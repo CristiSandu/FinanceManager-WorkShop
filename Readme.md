@@ -1,11 +1,11 @@
-# Finance Manager - Workshop
+# 💰 Finance Manager
 
-## Introduction
+## 📌 Introduction
 
 In this workshop, we will create a mobile application with UI that looks good using Xamarin Forms.  
 We will go through many notes. From the most introductory to the most complex and at the end we will have a Finance Manager that will look good and works as intended.
 
-## Discussion Points
+## 📑 Discussion Points
 
 1. What is Xamarin ?
 2. Application Design
@@ -64,7 +64,7 @@ We will go through many notes. From the most introductory to the most complex an
      GROUP BY Name;
      ```
 
-## Bibliography
+## 📖 Bibliography
 
 - [Xamarin Forms Documentation](https://docs.microsoft.com/en-us/xamarin/get-started/what-is-xamarin)
 - [Resizetizer.NT](https://www.nuget.org/packages/Resizetizer.NT/) - For adding SVGs
