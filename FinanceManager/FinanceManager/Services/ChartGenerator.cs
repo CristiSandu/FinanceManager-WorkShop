@@ -26,11 +26,11 @@ namespace FinanceManager.Services
         {
             "ChartColor1",
             "ChartColor2",
-            "ChartColor3",
             "ChartColor7",
             "ChartColor8",
             "ChartColor9",
             "ChartColor10",
+            "ChartColor3",
             "ChartColor4",
             "ChartColor5",
             "ChartColor6",
@@ -68,7 +68,9 @@ namespace FinanceManager.Services
             return new BarChart
             {
                 Entries = entrys,
-                LabelTextSize = 45f,
+                LabelTextSize = 40f,
+                MaxValue=800,
+                Margin=50,
                 LabelOrientation = Orientation.Horizontal,
                 ValueLabelOrientation = Orientation.Horizontal,
                 BackgroundColor = SKColor.Parse(Color.Transparent.ToHex())
@@ -99,7 +101,7 @@ namespace FinanceManager.Services
                 i++;
             }
 
-            return new DonutChart { Entries = entrys, LabelTextSize = 40f, BackgroundColor = SKColor.Parse(Color.Transparent.ToHex()) };
+            return new RadialGaugeChart { Entries = entrys, LabelTextSize = 40f, BackgroundColor = SKColor.Parse(Color.Transparent.ToHex()) };
         }
 
         public static async Task<Chart> GetExpencesCategory(DateTime fromPeriod)
@@ -132,6 +134,7 @@ namespace FinanceManager.Services
             {
                 Entries = entrys,
                 LabelTextSize = 40f,
+                Margin = 50,
                 LabelOrientation = Orientation.Horizontal,
                 ValueLabelOrientation = Orientation.Horizontal,
                 BackgroundColor = SKColor.Parse(Color.Transparent.ToHex())

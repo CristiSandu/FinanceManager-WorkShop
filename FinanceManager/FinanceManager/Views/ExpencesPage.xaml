@@ -30,7 +30,7 @@
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="5,5,5,5">
-                                <Button Text="{Binding .}" Style="{StaticResource MainButtonUnChecked}"  Clicked="Filter_Clicked"/>
+                                <Button Text="{Binding .}" Style="{StaticResource MainButtonChecked}"  Clicked="Filter_Clicked"/>
                             </StackLayout>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>

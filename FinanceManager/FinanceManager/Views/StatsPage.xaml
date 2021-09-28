@@ -12,36 +12,37 @@
 
     <ContentPage.Content>
         <StackLayout Spacing="15">
-            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="4,8,4,0" >
-                <Button  Text="&lt;" FontAttributes="Bold" FontSize="Large" Command="{Binding PrevMonth}"  
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="8,8,8,0" >
+                <Button Text="&lt;" FontAttributes="Bold" FontSize="Large" Command="{Binding PrevMonth}"
+                        HeightRequest="50" WidthRequest="50"
                         Style="{Binding ColorPrevButton}"
                         HorizontalOptions="StartAndExpand"/>
                 <Label  Text="{Binding CurrentShowDate, StringFormat='{0:MMMM yyyy}'}" VerticalOptions="CenterAndExpand" Style="{StaticResource TitleStyle}"/>
-                <Button Text="&gt;" FontSize="Large" FontAttributes="Bold"  Command="{Binding NextMonth}"  
+                <Button Text="&gt;" FontSize="Large" FontAttributes="Bold" 
+                        HeightRequest="50" WidthRequest="50"
+                        Command="{Binding NextMonth}"  
                         Style="{Binding ColorNextButton}"
                         HorizontalOptions="EndAndExpand" />
 
             </StackLayout>
+            
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="26" >
-                <Button Text="OverView" Style="{StaticResource MainButtonUnChecked}" Clicked="Button_Clicked"/>
-                <Button Text="Incoms" Style="{StaticResource MainButtonUnChecked}" Clicked="Button_Clicked"/>
-                <Button Text="Expences" Style="{StaticResource MainButtonUnChecked}" Clicked="Button_Clicked"/>
-
+                <Button Text="OverView" FontSize="Small" HeightRequest="5"  Style="{StaticResource MainButtonChecked}" Clicked="Button_Clicked"/>
+                <Button Text="Incoms" FontSize="Small"  Style="{StaticResource MainButtonChecked}" Clicked="Button_Clicked"/>
+                <Button Text="Expences" FontSize="Small"  Style="{StaticResource MainButtonChecked}" Clicked="Button_Clicked"/>
             </StackLayout>
 
             <StackLayout Padding="20">
-                <Frame  HeightRequest="350" WidthRequest="350" CornerRadius="10" BackgroundColor="{StaticResource AccentYellow}" >
-                    <StackLayout>
-                        <microcharts:ChartView x:Name="chartView" HeightRequest ="350" WidthRequest="350" Chart="{Binding GrafData}" />
-                    </StackLayout>
+                <Frame HeightRequest="500" WidthRequest="350" CornerRadius="10" BackgroundColor="{StaticResource AccentYellow}" >
+                    <microcharts:ChartView x:Name="chartView" HeightRequest ="350" WidthRequest="350" HorizontalOptions="Center" VerticalOptions="Center" Chart="{Binding GrafData}" />
                 </Frame>
-                <Frame   CornerRadius="10" BackgroundColor="{StaticResource AccentYellow}" >
+                
+                <Frame CornerRadius="10" BackgroundColor="{StaticResource AccentYellow}" >
                     <StackLayout Orientation="Horizontal">
                         <Label Style="{StaticResource TitleStyle}" TextColor="{StaticResource BackgroundDark}" Text="{Binding Path=TotalMessage}" />
                         <Label Style="{StaticResource TitleStyle}" TextColor="{Binding BalanceColor}" Text="{Binding Path=Balance,StringFormat='{}{0:+#;-#;} Lei'}"/>
                     </StackLayout>
                 </Frame>
-
             </StackLayout>
 
         </StackLayout>

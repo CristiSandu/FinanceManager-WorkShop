@@ -64,24 +64,8 @@ namespace FinanceManager.Services
         public static async Task<List<Account>> GetAccounts()
         {
             await Init();
-            string query = "SELECT Account as Name ,SUM(Price) as Balance FROM \"Transaction\"  WHERE Type = \"Income\" GROUP BY Account";
+            string query = "SELECT IFNULL(a.ACC ,b.ACC) as Name , (IFNULL(a.Balance,0) - IFNULL(b.Balance,0)) as Balance FROM (SELECT Account as ACC ,SUM(Price) as Balance FROM \"Transaction\"  WHERE Type = \"Income\" GROUP BY Account) a,(SELECT Account as ACC ,SUM(Price) as Balance FROM \"Transaction\" WHERE Type = \"Expense\" GROUP BY Account) b GROUP BY Name";
             var trans = await db.QueryAsync<Account>(query);
-
-            string query2 = "SELECT Account as Name ,SUM(Price) as Balance FROM \"Transaction\" WHERE Type = \"Expense\" GROUP BY Account ";
-            var trans2 = await db.QueryAsync<Account>(query2);
-
-
-
-            foreach (Account income in trans)
-            {
-                foreach (Account outcome in trans2)
-                {
-                    if (income.Name == outcome.Name)
-                    {
-                        income.Balance -= outcome.Balance;
-                    }
-                }
-            }
 
             var trans_list = trans.ToList();
             return trans_list;

@@ -128,6 +128,8 @@ namespace FinanceManager.ViewModels
             if (grafType == "OverView")
             {
                 GrafData = await Services.ChartGenerator.GetOverView(CurrentShowDate);
+                IncomeSum = await Services.DatabaseConnection.GetFunctionResult($"SELECT SUM(Price) FROM \"Transaction\" WHERE Type = \"Income\" ");
+                ExpencesSum = await Services.DatabaseConnection.GetFunctionResult($"SELECT SUM(Price) FROM \"Transaction\" WHERE Type = \"Expense\" ");
                 Balance = IncomeSum - ExpencesSum;
                 if (Balance < 0)
                 {

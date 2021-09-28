@@ -45,10 +45,10 @@ namespace FinanceManager.Views
         private async void Filter_Clicked(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            if (btn.Style == (Style)Application.Current.Resources["MainButtonUnChecked"])
-                btn.Style = (Style)Application.Current.Resources["MainButtonChecked"];
-            else
+            if (btn.Style == (Style)Application.Current.Resources["MainButtonChecked"])
                 btn.Style = (Style)Application.Current.Resources["MainButtonUnChecked"];
+            else
+                btn.Style = (Style)Application.Current.Resources["MainButtonChecked"];
 
             if (btn.Text == "Income")
                 TransactionsList = new ObservableCollection<Models.Transaction>(await Services.DatabaseConnection.GetIncomeTransactions());
@@ -62,10 +62,10 @@ namespace FinanceManager.Views
 
             if (CurrentCheck != null)
             {
-                if (CurrentCheck.Style == (Style)Application.Current.Resources["MainButtonChecked"])
-                    CurrentCheck.Style = (Style)Application.Current.Resources["MainButtonUnChecked"];
-                else
+                if (CurrentCheck.Style == (Style)Application.Current.Resources["MainButtonUnChecked"])
                     CurrentCheck.Style = (Style)Application.Current.Resources["MainButtonChecked"];
+                else
+                    CurrentCheck.Style = (Style)Application.Current.Resources["MainButtonUnChecked"];
             }
 
             CurrentCheck = btn;

@@ -26,8 +26,8 @@ namespace FinanceManager.Views
            
             if (btn != null && btn.Text != AppliedFilter.Text)
             {
-                btn.Style = (Style)Application.Current.Resources["MainButtonChecked"];
-                AppliedFilter.Style = (Style)Application.Current.Resources["MainButtonUnChecked"];
+                btn.Style = (Style)Application.Current.Resources["MainButtonUnChecked"];
+                AppliedFilter.Style = (Style)Application.Current.Resources["MainButtonChecked"];
                 AppliedFilter = btn;
                 (BindingContext as ViewModels.StatsPageViewModel).CurrentAppliedFilter = btn.Text;
             }
