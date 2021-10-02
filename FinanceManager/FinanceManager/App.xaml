@@ -26,8 +26,8 @@
 
             <Style x:Key="MainButtonUnChecked" TargetType="Button">
                 <Setter Property="CornerRadius" Value="20" />
-                <Setter Property="TextColor" Value="{StaticResource BackgroundDark}" />
-                <Setter Property="BackgroundColor" Value="{StaticResource AccentYellow}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding  Dark={StaticResource BackgroundDark}, Light= {StaticResource BackgroundLight}}" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource AccentYellow}, Light={StaticResource AccentDarkGreen}}" />
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontSize" Value="16"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
@@ -35,9 +35,9 @@
 
             <Style x:Key="MainButtonChecked" TargetType="Button">
                 <Setter Property="CornerRadius" Value="20" />
-                <Setter Property="TextColor" Value="{StaticResource AccentYellow}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource AccentYellow}, Light={StaticResource AccentDarkGreen}}"  />
                 <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="BorderColor" Value="{StaticResource AccentYellow}"/>
+                <Setter Property="BorderColor" Value="{AppThemeBinding Dark={StaticResource AccentYellow}, Light={StaticResource AccentDarkGreen}}"/>
                 <Setter Property="BorderWidth" Value="2"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontSize" Value="16"/>
@@ -47,21 +47,22 @@
             <Style x:Key="FrameAddNews" TargetType="Frame">
                 <Setter Property="CornerRadius" Value="5"/>
                 <Setter Property="Padding" Value="10"/>
-                <Setter Property="BorderColor" Value="{StaticResource AccentYellow}"/>
+                <Setter Property="BorderColor" Value="{AppThemeBinding Dark={StaticResource AccentYellow}, Light={StaticResource AccentDarkGreen}}" />
                 <Setter Property="BackgroundColor" Value="Transparent"/>
             </Style>
 
             <Style x:Key="TitleStyle" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource BackgroundLight}, Dark={StaticResource BackgroundDark}}"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
             </Style>
 
             <Style x:Key="TransactionListStyle" TargetType="Frame">
-                <Setter Property="BorderColor" Value="{StaticResource AccentYellow}" />
+                <Setter Property="BorderColor" Value="{AppThemeBinding Dark={StaticResource AccentYellow}, Light={StaticResource AccentDarkGreen}}" />
                 <Setter Property="Padding" Value="10,10,10,10" />
                 <Setter Property="CornerRadius" Value="10"/>
-                <Setter Property="BackgroundColor" Value="{StaticResource AccentYellow}"/>
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource AccentYellow}, Light={StaticResource AccentDarkGreen}}" />
                 <Setter Property="Opacity" Value="1"/>
                 <Setter Property="HasShadow" Value="True"/>
             </Style>

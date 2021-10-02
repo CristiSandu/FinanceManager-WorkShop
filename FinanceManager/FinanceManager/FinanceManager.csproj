@@ -16,6 +16,7 @@
     <None Remove="Img\bar-chart-2.svg" />
     <None Remove="Img\dollar-sign.svg" />
     <None Remove="Img\personal_finance.svg" />
+    <None Remove="Img\personal_finance_light.svg" />
     <None Remove="Img\shopping-bag.svg" />
   </ItemGroup>
 
@@ -33,6 +34,7 @@
     <SharedImage Include="Img\bar-chart-2.svg" BaseSize="35, 35" />
     <SharedImage Include="Img\dollar-sign.svg" BaseSize="35, 35" />
     <SharedImage Include="Img\personal_finance.svg" BaseSize="320, 320" />
+    <SharedImage Include="Img\personal_finance_light.svg" BaseSize="320, 320"/>
     <SharedImage Include="Img\shopping-bag.svg" BaseSize="35, 35" />
   </ItemGroup>
 
@@ -47,6 +49,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MainTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\StatsPage.xaml">

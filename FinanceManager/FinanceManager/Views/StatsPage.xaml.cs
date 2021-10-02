@@ -32,5 +32,10 @@ namespace FinanceManager.Views
                 (BindingContext as ViewModels.StatsPageViewModel).CurrentAppliedFilter = btn.Text;
             }
         }
+
+        private async void settings_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SettingsPage());
+        }
     }
 }

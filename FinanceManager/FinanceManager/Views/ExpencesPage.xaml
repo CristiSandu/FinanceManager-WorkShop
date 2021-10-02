@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinanceManager.Views.ExpencesPage"
              xmlns:converter ="clr-namespace:FinanceManager.Convertors"
-             Title="Expences">
+             Title="Expences"
+             BackgroundColor="{AppThemeBinding Light={StaticResource BackgroundLight}, Dark={StaticResource BackgroundDark}}"
+             >
 
     
     <ContentPage.Resources>
@@ -18,11 +20,11 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout Padding="12" Spacing="12">
-        <Frame CornerRadius="20" BackgroundColor="Transparent" BorderColor="{StaticResource AccentYellow}" Padding="8">
+        <Frame Style="{StaticResource FrameAddNews}" Padding="8">
             <StackLayout >
                 <StackLayout Orientation="Horizontal" VerticalOptions="Center" HeightRequest="26" Padding="5,0,0,0">
-                    <Label Text="Filters:" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" Padding="0,-3,0,0"/>
-                    <Label x:Name="selectedFilter" IsVisible="False" Text="Global" FontSize="Large" HorizontalOptions="Start" FontAttributes="Italic" VerticalOptions="Center" Padding="0,-3,0,0"/>
+                    <Label Text="Filters:" FontSize="Large" FontAttributes="Bold" TextColor="{AppThemeBinding Dark={StaticResource BackgroundLight}, Light={StaticResource AccentDarkPurple}}" VerticalOptions="Center" HorizontalOptions="Start" Padding="0,-3,0,0"/>
+                    <Label x:Name="selectedFilter" IsVisible="False" Text="Global" TextColor="{AppThemeBinding Dark={StaticResource BackgroundLight}, Light={StaticResource AccentDarkPurple}}" FontSize="Large" HorizontalOptions="Start" FontAttributes="Italic" VerticalOptions="Center" Padding="0,-3,0,0"/>
                     <Button x:Name="hideButton" Text="-" FontAttributes="Bold" FontSize="24" TextTransform="Uppercase" CornerRadius="20" Padding="-5" BackgroundColor="Transparent" BorderWidth="2" BorderColor="{StaticResource AccentDarkGreen}" TextColor="{StaticResource AccentDarkGreen}" HeightRequest="26" Clicked="hideFilters_Clicked" HorizontalOptions="EndAndExpand" WidthRequest="26"/>
                 </StackLayout>
                 <FlexLayout x:Name="filtersList" BindableLayout.ItemsSource="{Binding BillListFilters}" Wrap="Wrap"
@@ -66,13 +68,11 @@
                             <Label Text="{Binding Name}"
                                    FontAttributes="Bold"
                                    FontSize="Medium"
-                                   TextColor="{StaticResource BackgroundDark}"
                                    Style="{StaticResource TitleStyle}"/>
 
                             <Label Grid.Row="1"
                                    HorizontalOptions="StartAndExpand"
                                    Text="{Binding Date,StringFormat='{0:dd/MM/yyyy}'}"
-                                   TextColor="{StaticResource BackgroundDark}"
                                    FontSize="Small"
                                    FontAttributes="Bold"
                                    Style="{StaticResource TitleStyle}"
@@ -82,7 +82,6 @@
                                    Grid.Column="1"
                                    
                                    Text="{Binding Path=Category}"
-                                   TextColor="{StaticResource BackgroundDark}"
                                    HorizontalOptions="Start"
                                    FontAttributes="Bold"
                                    FontSize="Small"
@@ -92,8 +91,6 @@
                                    Grid.Column="2"
                                    HorizontalOptions="EndAndExpand"
                                    Text="{Binding Path=Price,StringFormat='{0:F2} Lei'}"
-                                   TextColor="{StaticResource BackgroundDark}"
-                                   
                                    FontAttributes="Bold"
                                    FontSize="Medium"
                                    Style="{StaticResource TitleStyle}"/>

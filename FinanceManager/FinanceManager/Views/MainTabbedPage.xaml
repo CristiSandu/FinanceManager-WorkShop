@@ -6,9 +6,12 @@
             android:TabbedPage.ToolbarPlacement="Bottom" 
             android:TabbedPage.IsSwipePagingEnabled="False"
             NavigationPage.HasNavigationBar="False" 
-            xmlns:view="clr-namespace:FinanceManager.Views">
+            xmlns:view="clr-namespace:FinanceManager.Views"
+            BackgroundColor="{AppThemeBinding Light={StaticResource BackgroundLight}, Dark={StaticResource BackgroundDark}}"
+            BarTextColor="{StaticResource AccentLitePurple}"
+            BackgroundImageSource="{StaticResource AccentLitePurple}">
 
-    <NavigationPage Title="Bill" IconImageSource="shopping-bag.png" >
+    <NavigationPage Title="Bill"  IconImageSource="shopping-bag.png" >
         <x:Arguments>
             <view:ExpencesPage/>
         </x:Arguments>

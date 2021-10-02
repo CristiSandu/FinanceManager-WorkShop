@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinanceManager.Views.AccountsPage"
-             Title="Cards">
+             Title="Cards"
+             BackgroundColor="{AppThemeBinding Light={StaticResource BackgroundLight}, Dark={StaticResource BackgroundDark}}">
 
     <ContentPage.Content>
         <StackLayout Padding="10">
@@ -32,13 +33,13 @@
                                        Grid.Row="0"
                                        FontAttributes="Bold"
                                        FontSize="Medium"
-                                       TextColor="{StaticResource BackgroundDark}"
+                                       TextColor="{AppThemeBinding Light={StaticResource BackgroundLight}, Dark={StaticResource BackgroundDark}}"
                                        Style="{StaticResource TitleStyle}"/>
 
                                 <Label Grid.Column="1"
                                        HorizontalOptions="EndAndExpand"
                                        Text="{Binding Path=Balance,StringFormat='{0:F2} Lei'}"
-                                       TextColor="{StaticResource BackgroundDark}"
+                                       TextColor="{AppThemeBinding Light={StaticResource BackgroundLight}, Dark={StaticResource BackgroundDark}}"
                                        FontAttributes="Bold"
                                        FontSize="Medium"
                                        Style="{StaticResource TitleStyle}"/>

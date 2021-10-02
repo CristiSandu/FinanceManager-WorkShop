@@ -63,6 +63,12 @@ We will go through many notes. From the most introductory to the most complex an
          GROUP BY Account) b
      GROUP BY Name;
      ```
+10. Settings
+    - Theming: Dark/Light Mode
+    - Xamarin.Essentials : **Preferences**
+11. Get rid of the welcome screen after the first start
+    - Xamarin.Essentials: **Version Tracking**
+12. App Icon and Splash Screen
 
 ## 📖 Bibliography
 
@@ -75,5 +81,7 @@ We will go through many notes. From the most introductory to the most complex an
 - [Microcharts.Forms](https://www.nuget.org/packages/Microcharts.Forms/)
   - [DevBlog - Tutorial](https://devblogs.microsoft.com/xamarin/microcharts-elegant-cross-platform-charts-for-any-app/)
   - [Gerald Versluis](https://www.youtube.com/channel/UCBBZ2kXWmd8eXlHg2wEaClw) - [Tutorial](https://www.youtube.com/watch?v=tLDxMKub5WA)
+- Theming
+  - [James Montemagno](https://www.youtube.com/channel/UCENTmbKaTphpWV2R2evVz2A) - [Tutorial](https://www.youtube.com/watch?v=4w8TQ8njd3w)
 
-_powerd by [MLSA UPB](https://facebook.com/profile.php?id=156173461134517&ref=content_filter)_
+_powered by [MLSA UPB](https://facebook.com/profile.php?id=156173461134517&ref=content_filter)_

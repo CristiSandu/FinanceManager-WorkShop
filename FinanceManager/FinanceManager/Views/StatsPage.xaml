@@ -6,8 +6,7 @@
              Title="Stats">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem  x:Name="settings" Order="Primary" Text="Settings"  />
-        <ToolbarItem  x:Name="seconsbutton" Order="Secondary" Text="-"  />
+        <ToolbarItem  x:Name="settings" Order="Primary" Text="Settings"  Clicked="settings_Clicked" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
@@ -17,7 +16,7 @@
                         HeightRequest="50" WidthRequest="50"
                         Style="{Binding ColorPrevButton}"
                         HorizontalOptions="StartAndExpand"/>
-                <Label  Text="{Binding CurrentShowDate, StringFormat='{0:MMMM yyyy}'}" VerticalOptions="CenterAndExpand" Style="{StaticResource TitleStyle}"/>
+                <Label  Text="{Binding CurrentShowDate, StringFormat='{0:MMMM yyyy}'}" VerticalOptions="CenterAndExpand" TextColor="{AppThemeBinding Light={StaticResource AccentDarkPurple}, Dark={StaticResource BackgroundLight}}" Style="{StaticResource TitleStyle}"/>
                 <Button Text="&gt;" FontSize="Large" FontAttributes="Bold" 
                         HeightRequest="50" WidthRequest="50"
                         Command="{Binding NextMonth}"  
@@ -33,13 +32,13 @@
             </StackLayout>
 
             <StackLayout Padding="20">
-                <Frame HeightRequest="500" WidthRequest="350" CornerRadius="10" BackgroundColor="{StaticResource AccentYellow}" >
+                <Frame HeightRequest="500" WidthRequest="350" CornerRadius="10" Style="{StaticResource TransactionListStyle}" BackgroundColor="Transparent" >
                     <microcharts:ChartView x:Name="chartView" HeightRequest ="350" WidthRequest="350" HorizontalOptions="Center" VerticalOptions="Center" Chart="{Binding GrafData}" />
                 </Frame>
-                
-                <Frame CornerRadius="10" BackgroundColor="{StaticResource AccentYellow}" >
+
+                <Frame CornerRadius="10"  Style="{StaticResource TransactionListStyle}"  >
                     <StackLayout Orientation="Horizontal">
-                        <Label Style="{StaticResource TitleStyle}" TextColor="{StaticResource BackgroundDark}" Text="{Binding Path=TotalMessage}" />
+                        <Label Style="{StaticResource TitleStyle}" Text="{Binding Path=TotalMessage}" />
                         <Label Style="{StaticResource TitleStyle}" TextColor="{Binding BalanceColor}" Text="{Binding Path=Balance,StringFormat='{}{0:+#;-#;} Lei'}"/>
                     </StackLayout>
                 </Frame>
