@@ -83,5 +83,9 @@ We will go through many notes. From the most introductory to the most complex an
   - [Gerald Versluis](https://www.youtube.com/channel/UCBBZ2kXWmd8eXlHg2wEaClw) - [Tutorial](https://www.youtube.com/watch?v=tLDxMKub5WA)
 - Theming
   - [James Montemagno](https://www.youtube.com/channel/UCENTmbKaTphpWV2R2evVz2A) - [Tutorial](https://www.youtube.com/watch?v=4w8TQ8njd3w)
+- Icons
+  - [James Montemagno](https://www.youtube.com/channel/UCENTmbKaTphpWV2R2evVz2A) - [Tutorial](https://www.youtube.com/watch?v=XEAyAf3_MpU&t=1s)
+  - https://easyappicon.com/
+  - [Splash Screen Documentation](https://docs.microsoft.com/en-us/xamarin/android/user-interface/splash-screen)
 
 _powered by [MLSA UPB](https://facebook.com/profile.php?id=156173461134517&ref=content_filter)_

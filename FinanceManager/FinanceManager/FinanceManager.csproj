@@ -34,12 +34,15 @@
     <SharedImage Include="Img\bar-chart-2.svg" BaseSize="35, 35" />
     <SharedImage Include="Img\dollar-sign.svg" BaseSize="35, 35" />
     <SharedImage Include="Img\personal_finance.svg" BaseSize="320, 320" />
-    <SharedImage Include="Img\personal_finance_light.svg" BaseSize="320, 320"/>
+    <SharedImage Include="Img\personal_finance_light.svg" BaseSize="320, 320" />
     <SharedImage Include="Img\shopping-bag.svg" BaseSize="35, 35" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Views\AccountsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AddAccountPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\AddTransactionPage.xaml">

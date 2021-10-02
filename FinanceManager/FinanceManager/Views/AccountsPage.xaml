@@ -47,6 +47,39 @@
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
+                
+                 <CollectionView.EmptyView>
+                <ContentView>
+                    <StackLayout HorizontalOptions="CenterAndExpand"
+                             VerticalOptions="CenterAndExpand">
+                            <Label Text="Go to Bill Page and "
+                                   FontAttributes="Bold"
+                                   FontSize="18"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label Text="Press "
+                                   FontAttributes="Bold"
+                                   FontSize="18"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+
+                            <Label Text="+"
+                                   WidthRequest="20" 
+                                   FontAttributes="Bold"
+                                   FontSize="34"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"/>
+                        </StackLayout>
+                        <Label Text="for adding new Transaction"
+                                   FontAttributes="Bold"
+                                   FontSize="18"
+                                    VerticalOptions="Center"
+                                   HorizontalOptions="Center" />
+
+                    </StackLayout>
+                </ContentView>
+            </CollectionView.EmptyView>
             </CollectionView>
         </StackLayout>
     </ContentPage.Content>

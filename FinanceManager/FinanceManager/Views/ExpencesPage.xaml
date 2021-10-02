@@ -101,6 +101,37 @@
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
+
+            <CollectionView.EmptyView>
+                <ContentView>
+                    <StackLayout HorizontalOptions="CenterAndExpand"
+                             VerticalOptions="CenterAndExpand">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label Text="Press "
+                                   FontAttributes="Bold"
+                                   FontSize="18"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   HorizontalTextAlignment="Center" 
+                                   />
+
+                            <Label Text="+"
+                                   WidthRequest="20" 
+                                   FontAttributes="Bold"
+                                   FontSize="34"
+                                   VerticalOptions="Center"
+                                   HorizontalTextAlignment="Center" 
+                                   />
+                        </StackLayout>
+                        <Label Text="for adding new Transaction"
+                                   FontAttributes="Bold"
+                                   FontSize="18"
+                                    VerticalOptions="Center"
+                                   HorizontalTextAlignment="Center" />
+
+                    </StackLayout>
+                </ContentView>
+            </CollectionView.EmptyView>
         </CollectionView>
     </StackLayout>
 </ContentPage>
