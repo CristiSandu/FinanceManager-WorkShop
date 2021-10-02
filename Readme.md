@@ -69,6 +69,9 @@ We will go through many notes. From the most introductory to the most complex an
 11. Get rid of the welcome screen after the first start
     - Xamarin.Essentials: **Version Tracking**
 12. App Icon and Splash Screen
+13. Add Account Page
+    - On first start to introduce account and balance
+    - Add Separate table in DB for Accounts
 
 ## 📖 Bibliography
 

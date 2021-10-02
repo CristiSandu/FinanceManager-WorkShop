@@ -51,11 +51,9 @@
                             <StackLayout Spacing="0">
                                 <Label x:Name="DescriptionCard" Text="Account" Style="{StaticResource TextColorLabel}"/>
 
-
-
                                 <Picker ItemsSource="{Binding Accounts}"
-                                        ItemDisplayBinding="{Binding .}"
-                                        SelectedItem="{Binding SelectedAccount}" 
+                                        ItemDisplayBinding="{Binding Name}"
+                                        SelectedItem="{Binding SelectedAccount}"
                                         Style="{StaticResource TextColorLabel}"/>
 
                             </StackLayout>

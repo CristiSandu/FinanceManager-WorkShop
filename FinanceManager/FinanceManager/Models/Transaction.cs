@@ -22,6 +22,6 @@ namespace FinanceManager.Models
 
         public string Type { get; set; }
 
-        public string Account { get; set; }
+        public int Account { get; set; }
     }
 }

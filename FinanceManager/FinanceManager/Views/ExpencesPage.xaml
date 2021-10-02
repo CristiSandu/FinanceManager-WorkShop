@@ -7,7 +7,7 @@
              BackgroundColor="{AppThemeBinding Light={StaticResource BackgroundLight}, Dark={StaticResource BackgroundDark}}"
              >
 
-    
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <converter:TransactionTypeConvertor x:Key="transactionTypeConvertor"/>
@@ -105,29 +105,30 @@
             <CollectionView.EmptyView>
                 <ContentView>
                     <StackLayout HorizontalOptions="CenterAndExpand"
-                             VerticalOptions="CenterAndExpand">
+                                 VerticalOptions="CenterAndExpand">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                             <Label Text="Press "
+                                   TextColor="{AppThemeBinding Light={StaticResource BackgroundDark}, Dark={StaticResource BackgroundLight}}"
                                    FontAttributes="Bold"
                                    FontSize="18"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"
-                                   HorizontalTextAlignment="Center" 
-                                   />
+                                   HorizontalTextAlignment="Center" />
 
                             <Label Text="+"
+                                   TextColor="{AppThemeBinding Light={StaticResource BackgroundDark}, Dark={StaticResource BackgroundLight}}"
                                    WidthRequest="20" 
                                    FontAttributes="Bold"
                                    FontSize="34"
                                    VerticalOptions="Center"
-                                   HorizontalTextAlignment="Center" 
-                                   />
-                        </StackLayout>
-                        <Label Text="for adding new Transaction"
-                                   FontAttributes="Bold"
-                                   FontSize="18"
-                                    VerticalOptions="Center"
                                    HorizontalTextAlignment="Center" />
+                        </StackLayout>
+                        <Label  Text="for adding new Transaction"
+                                TextColor="{AppThemeBinding Light={StaticResource BackgroundDark}, Dark={StaticResource BackgroundLight}}"
+                                FontAttributes="Bold"
+                                FontSize="18"
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Center" />
 
                     </StackLayout>
                 </ContentView>

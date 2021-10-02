@@ -19,7 +19,7 @@ namespace FinanceManager.Views
 
         private async void getStarted_Clicked(object sender, EventArgs e)
         {
-           await Navigation.PushAsync(new MainTabbedPage());
+           await Navigation.PushAsync(new AddAccountPage());
         }
     }
 }

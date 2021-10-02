@@ -47,25 +47,39 @@
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
+                <CollectionView.Header>
+                    <ContentView>
+                        <Label x:Name="totalMoney"
+                                Padding="16"
+                                HorizontalOptions="Center"
+                                TextColor="{AppThemeBinding Light={StaticResource BackgroundDark}, Dark={StaticResource BackgroundLight}}"
+                                FontAttributes="Bold"
+                                FontSize="Medium"
+                                Style="{StaticResource TitleStyle}"/>
+                    </ContentView>
+                </CollectionView.Header>
                 
                  <CollectionView.EmptyView>
                 <ContentView>
                     <StackLayout HorizontalOptions="CenterAndExpand"
-                             VerticalOptions="CenterAndExpand">
+                                 VerticalOptions="CenterAndExpand">
                             <Label Text="Go to Bill Page and "
                                    FontAttributes="Bold"
+                                   TextColor="{AppThemeBinding Light={StaticResource BackgroundDark}, Dark={StaticResource BackgroundLight}}"
                                    FontSize="18"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"/>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                             <Label Text="Press "
                                    FontAttributes="Bold"
+                                   TextColor="{AppThemeBinding Light={StaticResource BackgroundDark}, Dark={StaticResource BackgroundLight}}"
                                    FontSize="18"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"/>
 
                             <Label Text="+"
                                    WidthRequest="20" 
+                                   TextColor="{AppThemeBinding Light={StaticResource BackgroundDark}, Dark={StaticResource BackgroundLight}}"
                                    FontAttributes="Bold"
                                    FontSize="34"
                                    VerticalOptions="Center"
@@ -73,6 +87,7 @@
                         </StackLayout>
                         <Label Text="for adding new Transaction"
                                    FontAttributes="Bold"
+                               TextColor="{AppThemeBinding Light={StaticResource BackgroundDark}, Dark={StaticResource BackgroundLight}}"
                                    FontSize="18"
                                     VerticalOptions="Center"
                                    HorizontalOptions="Center" />
