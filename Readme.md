@@ -1,6 +1,6 @@
 # 💰 Finance Manager
 
-![](/Images/Picture7.png)
+![](/Images/Picture9.png)
 
 ## 📌 Introduction
 
