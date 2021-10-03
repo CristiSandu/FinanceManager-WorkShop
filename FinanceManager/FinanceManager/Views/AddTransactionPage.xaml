@@ -94,8 +94,6 @@
                             <Editor x:Name="TransactionDescription" Style="{StaticResource TextColorLabel}" HeightRequest="100" Text="{Binding Description}"/>
                         </StackLayout>
                     </Frame>
-                    <SwitchCell/>
-
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="Center">
                     <Button x:Name="SaveBtn" Text="Save" Style="{StaticResource MainButtonUnChecked}" Clicked="SaveBtn_Clicked"/>

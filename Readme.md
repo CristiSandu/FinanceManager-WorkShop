@@ -1,5 +1,7 @@
 # 💰 Finance Manager
 
+![](/Images/Picture7.png)
+
 ## 📌 Introduction
 
 In this workshop, we will create a mobile application with UI that looks good using Xamarin Forms.  
@@ -87,6 +89,8 @@ We will go through many steps. From the most introductory to the most complex an
 12. Get rid of the welcome screen after the first start
     - Xamarin.Essentials: **Version Tracking**
 13. App Icon and Splash Screen
+
+![](/Images/Picture5.png)
 
 ## 📖 Bibliography
 
