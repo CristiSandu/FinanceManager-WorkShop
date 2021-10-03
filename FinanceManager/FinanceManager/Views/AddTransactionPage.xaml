@@ -25,12 +25,7 @@
                             <Entry x:Name="TransactionName" Style="{StaticResource TextColorLabel}" Text="{Binding Name}"/>
                         </StackLayout>
                     </Frame>
-                    <Frame Style="{StaticResource FrameAddNews}" >
-                        <StackLayout Spacing="0">
-                            <Label x:Name="DescriptionDesc" Text="Description" Style="{StaticResource TextColorLabel}"/>
-                            <Editor x:Name="TransactionDescription" Style="{StaticResource TextColorLabel}" HeightRequest="100" Text="{Binding Description}"/>
-                        </StackLayout>
-                    </Frame>
+
                     <Frame Style="{StaticResource FrameAddNews}" >
                         <StackLayout Spacing="0">
                             <Label x:Name="DescriprionPrice" Text="Price" Style="{StaticResource TextColorLabel}" />
@@ -93,6 +88,13 @@
                             </StackLayout>
                         </Frame>
                     </Grid>
+                    <Frame Style="{StaticResource FrameAddNews}" >
+                        <StackLayout Spacing="0">
+                            <Label x:Name="DescriptionDesc" Text="Description" Style="{StaticResource TextColorLabel}"/>
+                            <Editor x:Name="TransactionDescription" Style="{StaticResource TextColorLabel}" HeightRequest="100" Text="{Binding Description}"/>
+                        </StackLayout>
+                    </Frame>
+                    <SwitchCell/>
 
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="Center">

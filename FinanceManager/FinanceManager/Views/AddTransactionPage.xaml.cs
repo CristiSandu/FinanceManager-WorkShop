@@ -23,7 +23,9 @@ namespace FinanceManager.Views
             "Salary",
             "Services",
             "Food",
-            "Gadgets"
+            "Gadgets",
+            "Persons"
+
         };
 
         public List<string> Types { get; set; } = new List<string>
