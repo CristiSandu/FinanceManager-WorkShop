@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FinanceManager.ViewModels
 {
-    public class BaseModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

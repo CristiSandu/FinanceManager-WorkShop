@@ -16,7 +16,10 @@ namespace FinanceManager.Services
         static async Task Init()
         {
             if (db != null)
+            {
                 return;
+            }
+
             var databasePath = Path.Combine(FileSystem.AppDataDirectory, "expencesDb.db");
             db = new SQLiteAsyncConnection(databasePath);
 

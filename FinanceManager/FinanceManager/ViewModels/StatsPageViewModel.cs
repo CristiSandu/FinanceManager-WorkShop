@@ -12,7 +12,7 @@ using Entry = Microcharts.ChartEntry;
 
 namespace FinanceManager.ViewModels
 {
-    class StatsPageViewModel : BaseModel
+    class StatsPageViewModel : BaseViewModel
     {
         private string _currentAppliedFilter = "OverView";
         public string CurrentAppliedFilter

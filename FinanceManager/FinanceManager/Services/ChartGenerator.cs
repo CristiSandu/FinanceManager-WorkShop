@@ -69,8 +69,8 @@ namespace FinanceManager.Services
             {
                 Entries = entrys,
                 LabelTextSize = 40f,
-                MaxValue=800,
-                Margin=50,
+                MaxValue = 800,
+                Margin = 50,
                 LabelOrientation = Orientation.Horizontal,
                 ValueLabelOrientation = Orientation.Horizontal,
                 BackgroundColor = SKColor.Parse(Color.Transparent.ToHex())

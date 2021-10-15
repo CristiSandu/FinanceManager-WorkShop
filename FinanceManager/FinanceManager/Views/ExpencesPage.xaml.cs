@@ -17,7 +17,7 @@ namespace FinanceManager.Views
         public ObservableCollection<string> BillListFilters { get; set; }
         public ObservableCollection<Models.Transaction> TransactionsList { get; set; }
 
-        public Button CurrentCheck { get; set; }
+        public Button CurrentCheck { get; set; } = new Button { Text = "-" };
 
         public ExpencesPage()
         {
@@ -26,7 +26,7 @@ namespace FinanceManager.Views
             BillListFilters = new ObservableCollection<string>
             {
                 "Income",
-                "Expences",
+                "Expenses",
                 "Global",
             };
             BindingContext = this;
@@ -38,37 +38,38 @@ namespace FinanceManager.Views
             if (CurrentCheck == null)
             {
                 TransactionsList = new ObservableCollection<Models.Transaction>(await Services.DatabaseConnection.GetGlobalTransactions());
-                expemcesList.ItemsSource = TransactionsList;
+                expensesList.ItemsSource = TransactionsList;
             }
         }
 
         private async void Filter_Clicked(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            if (btn.Style == (Style)Application.Current.Resources["MainButtonChecked"])
-                btn.Style = (Style)Application.Current.Resources["MainButtonUnChecked"];
-            else
-                btn.Style = (Style)Application.Current.Resources["MainButtonChecked"];
 
-            if (btn.Text == "Income")
-                TransactionsList = new ObservableCollection<Models.Transaction>(await Services.DatabaseConnection.GetIncomeTransactions());
-            else if (btn.Text == "Expences")
-                TransactionsList = new ObservableCollection<Models.Transaction>(await Services.DatabaseConnection.GetExpensesTransactions());
-            else
-                TransactionsList = new ObservableCollection<Models.Transaction>(await Services.DatabaseConnection.GetGlobalTransactions());
-
-            expemcesList.ItemsSource = TransactionsList;
-            selectedFilter.Text = btn.Text;
-
-            if (CurrentCheck != null)
+            if (btn != null && btn.Text != CurrentCheck.Text)
             {
-                if (CurrentCheck.Style == (Style)Application.Current.Resources["MainButtonUnChecked"])
-                    CurrentCheck.Style = (Style)Application.Current.Resources["MainButtonChecked"];
-                else
-                    CurrentCheck.Style = (Style)Application.Current.Resources["MainButtonUnChecked"];
-            }
+                btn.Style = (Style)Application.Current.Resources["MainButtonUnChecked"];
+                CurrentCheck.Style = (Style)Application.Current.Resources["MainButtonChecked"];
+                CurrentCheck = btn;
 
-            CurrentCheck = btn;
+                switch(btn.Text)
+                {
+                    case "Income":
+                        TransactionsList = new ObservableCollection<Models.Transaction>(await Services.DatabaseConnection.GetIncomeTransactions());
+                        break;
+                    case "Expenses":
+                        TransactionsList = new ObservableCollection<Models.Transaction>(await Services.DatabaseConnection.GetExpensesTransactions());
+                        break;
+                    default:
+                        TransactionsList = new ObservableCollection<Models.Transaction>(await Services.DatabaseConnection.GetGlobalTransactions());
+                        break;
+                }
+
+                expensesList.ItemsSource = TransactionsList;
+                selectedFilter.Text = btn.Text;
+
+                CurrentCheck = btn;
+            }
         }
 
         private async void addTransaction_Clicked(object sender, EventArgs e)

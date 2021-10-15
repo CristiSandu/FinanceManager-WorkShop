@@ -15,7 +15,7 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem  x:Name="addTransaction" Order="Primary" Text="+" Clicked="addTransaction_Clicked" />
+        <ToolbarItem  x:Name="addTransaction" Order="Primary" Text="+" Clicked="addTransaction_Clicked"/>
         <ToolbarItem  x:Name="hideFilters" Order="Secondary" Text="-" Clicked="hideFilters_Clicked" />
     </ContentPage.ToolbarItems>
 
@@ -39,7 +39,7 @@
                 </FlexLayout>
             </StackLayout>
         </Frame>
-        <CollectionView x:Name="expemcesList" 
+        <CollectionView x:Name="expensesList" 
                         SelectionMode="Single" 
                         ItemsSource="{Binding Expences}" 
                         SelectionChanged="expemcesList_SelectionChanged" >
