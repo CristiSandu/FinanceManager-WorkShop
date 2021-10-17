@@ -23,9 +23,37 @@
         <Frame Style="{StaticResource FrameAddNews}" Padding="8">
             <StackLayout >
                 <StackLayout Orientation="Horizontal" VerticalOptions="Center" HeightRequest="26" Padding="5,0,0,0">
-                    <Label Text="Filters:" FontSize="Large" FontAttributes="Bold" TextColor="{AppThemeBinding Dark={StaticResource BackgroundLight}, Light={StaticResource AccentDarkPurple}}" VerticalOptions="Center" HorizontalOptions="Start" Padding="0,-3,0,0"/>
-                    <Label x:Name="selectedFilter" IsVisible="False" Text="Global" TextColor="{AppThemeBinding Dark={StaticResource BackgroundLight}, Light={StaticResource AccentDarkPurple}}" FontSize="Large" HorizontalOptions="Start" FontAttributes="Italic" VerticalOptions="Center" Padding="0,-3,0,0"/>
-                    <Button x:Name="hideButton" Text="-" FontAttributes="Bold" FontSize="24" TextTransform="Uppercase" CornerRadius="20" Padding="-5" BackgroundColor="Transparent" BorderWidth="2" BorderColor="{StaticResource AccentDarkGreen}" TextColor="{StaticResource AccentDarkGreen}" HeightRequest="26" Clicked="hideFilters_Clicked" HorizontalOptions="EndAndExpand" WidthRequest="26"/>
+                    <Label Text="Filters:" 
+                           FontSize="Large" 
+                           FontAttributes="Bold" 
+                           TextColor="{AppThemeBinding Dark={StaticResource BackgroundLight}, Light={StaticResource AccentDarkPurple}}" 
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Start" 
+                           Padding="0,-3,0,0"/>
+                    <Label x:Name="selectedFilter" 
+                           IsVisible="False" 
+                           Text="Global" 
+                           TextColor="{AppThemeBinding Dark={StaticResource BackgroundLight}, Light={StaticResource AccentDarkPurple}}" 
+                           FontSize="Large" 
+                           HorizontalOptions="Start" 
+                           FontAttributes="Italic" 
+                           VerticalOptions="Center" 
+                           Padding="0,-3,0,0"/>
+                    <Button x:Name="hideButton" 
+                            Text="-" 
+                            FontAttributes="Bold" 
+                            FontSize="24" 
+                            TextTransform="Uppercase" 
+                            CornerRadius="20" 
+                            Padding="-5" 
+                            BackgroundColor="Transparent" 
+                            BorderWidth="2" 
+                            BorderColor="{StaticResource AccentDarkGreen}"
+                            TextColor="{StaticResource AccentDarkGreen}" 
+                            HeightRequest="26" 
+                            Clicked="hideFilters_Clicked" 
+                            HorizontalOptions="EndAndExpand" 
+                            WidthRequest="26"/>
                 </StackLayout>
                 <FlexLayout x:Name="filtersList" BindableLayout.ItemsSource="{Binding BillListFilters}" Wrap="Wrap"
                             VerticalOptions="Start"  JustifyContent="Start"  AlignItems="Start" >

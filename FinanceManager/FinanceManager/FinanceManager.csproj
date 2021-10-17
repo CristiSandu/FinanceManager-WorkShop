@@ -11,31 +11,34 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Img\arrow-down.svg" />
-    <None Remove="Img\arrow-up.svg" />
-    <None Remove="Img\bar-chart-2.svg" />
-    <None Remove="Img\dollar-sign.svg" />
+    <None Remove="Img\arrow_down.svg" />
+    <None Remove="Img\arrow_up.svg" />
+    <None Remove="Img\bar_chart_2.svg" />
+    <None Remove="Img\dollar_sign.svg" />
     <None Remove="Img\personal_finance.svg" />
     <None Remove="Img\personal_finance_light.svg" />
-    <None Remove="Img\shopping-bag.svg" />
+    <None Remove="Img\shopping_bag.svg" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
-    <PackageReference Include="Resizetizer.NT" Version="0.2.0" />
+    <PackageReference Include="Resizetizer.NT" Version="0.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <SharedImage Include="Img\arrow-down.svg" BaseSize="21, 21" />
-    <SharedImage Include="Img\arrow-up.svg" BaseSize="21, 21" />
-    <SharedImage Include="Img\bar-chart-2.svg" BaseSize="35, 35" />
-    <SharedImage Include="Img\dollar-sign.svg" BaseSize="35, 35" />
+    <SharedImage Include="Img\arrow_down.svg" BaseSize="21, 21" />
+    <SharedImage Include="Img\arrow_up.svg" BaseSize="21, 21" />
+    <SharedImage Include="Img\bar_chart_2.svg" BaseSize="35, 35" />
+    <SharedImage Include="Img\dollar_sign.svg" BaseSize="35, 35" />
     <SharedImage Include="Img\personal_finance.svg" BaseSize="320, 320" />
     <SharedImage Include="Img\personal_finance_light.svg" BaseSize="320, 320" />
-    <SharedImage Include="Img\shopping-bag.svg" BaseSize="35, 35" />
+    <SharedImage Include="Img\shopping_bag.svg" BaseSize="35, 35" />
   </ItemGroup>
 
   <ItemGroup>
