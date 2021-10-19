@@ -40,7 +40,6 @@
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource FrameAddNews}" >
                             <StackLayout Spacing="0">
@@ -65,12 +64,11 @@
 
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="* "/>
+                            <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource FrameAddNews}" >
                             <StackLayout Spacing="0">

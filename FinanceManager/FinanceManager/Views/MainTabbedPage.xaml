@@ -5,25 +5,23 @@
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom" 
             android:TabbedPage.IsSwipePagingEnabled="False"
-            NavigationPage.HasNavigationBar="False" 
+            NavigationPage.HasNavigationBar="False"
             xmlns:view="clr-namespace:FinanceManager.Views"
-            BackgroundColor="{AppThemeBinding Light={StaticResource BackgroundLight}, Dark={StaticResource BackgroundDark}}"
-            BarTextColor="{StaticResource AccentLitePurple}"
-            BackgroundImageSource="{StaticResource AccentLitePurple}">
+            BackgroundColor="{AppThemeBinding Light={StaticResource BackgroundLight}, Dark={StaticResource BackgroundDark}}">
 
-    <NavigationPage Title="Bill"  IconImageSource="shopping-bag.png" >
+    <NavigationPage Title="Bill"  IconImageSource="shopping_bag.png" >
         <x:Arguments>
             <view:ExpencesPage/>
         </x:Arguments>
     </NavigationPage>
 
-    <NavigationPage Title="Stats" IconImageSource="bar-chart-2.png" >
+    <NavigationPage Title="Stats" IconImageSource="bar_chart_2.png" >
         <x:Arguments>
             <view:StatsPage/>
         </x:Arguments>
     </NavigationPage>
 
-    <NavigationPage Title="Cards" IconImageSource="dollar-sign.png" >
+    <NavigationPage Title="Cards" IconImageSource="dollar_sign.png" >
         <x:Arguments>
             <view:AccountsPage/>
         </x:Arguments>

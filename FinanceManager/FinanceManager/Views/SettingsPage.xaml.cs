@@ -61,8 +61,8 @@ namespace FinanceManager.Views
                     Settings.Theme = 2;
                     CheckButton = darkTheme;
                     break;
-
             }
+
             Settings.SetTheme();
         }
     }

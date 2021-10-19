@@ -6,27 +6,34 @@
              Title="Stats">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem  x:Name="settings" Order="Primary" Text="Settings"  Clicked="settings_Clicked" />
+        <ToolbarItem  x:Name="settings" Order="Primary" Text="Settings"  Clicked="settings_Clicked"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout Spacing="15">
             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="8,8,8,0" >
-                <Button Text="&lt;" FontAttributes="Bold" FontSize="Large" Command="{Binding PrevMonth}"
+                <Button Text="&lt;" 
+                        FontAttributes="Bold" 
+                        FontSize="Large" 
+                        Command="{Binding PrevMonth}"
                         HeightRequest="50" WidthRequest="50"
                         Style="{Binding ColorPrevButton}"
                         HorizontalOptions="StartAndExpand"/>
-                <Label  Text="{Binding CurrentShowDate, StringFormat='{0:MMMM yyyy}'}" VerticalOptions="CenterAndExpand" TextColor="{AppThemeBinding Light={StaticResource AccentDarkPurple}, Dark={StaticResource BackgroundLight}}" Style="{StaticResource TitleStyle}"/>
-                <Button Text="&gt;" FontSize="Large" FontAttributes="Bold" 
+                <Label  Text="{Binding CurrentShowDate, StringFormat='{0:MMMM yyyy}'}" 
+                        VerticalOptions="CenterAndExpand" 
+                        TextColor="{AppThemeBinding Light={StaticResource AccentDarkPurple}, Dark={StaticResource BackgroundLight}}" 
+                        Style="{StaticResource TitleStyle}"/>
+                <Button Text="&gt;" 
+                        FontSize="Large" 
+                        FontAttributes="Bold" 
                         HeightRequest="50" WidthRequest="50"
                         Command="{Binding NextMonth}"  
                         Style="{Binding ColorNextButton}"
                         HorizontalOptions="EndAndExpand" />
-
             </StackLayout>
-            
+
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="26" >
-                <Button Text="OverView" FontSize="Small" HeightRequest="5"  Style="{StaticResource MainButtonChecked}" Clicked="Button_Clicked"/>
+                <Button Text="OverView" FontSize="Small" HeightRequest="5" Style="{StaticResource MainButtonChecked}" Clicked="Button_Clicked"/>
                 <Button Text="Incoms" FontSize="Small"  Style="{StaticResource MainButtonChecked}" Clicked="Button_Clicked"/>
                 <Button Text="Expences" FontSize="Small"  Style="{StaticResource MainButtonChecked}" Clicked="Button_Clicked"/>
             </StackLayout>
@@ -35,7 +42,6 @@
                 <Frame HeightRequest="500" WidthRequest="350" CornerRadius="10" Style="{StaticResource TransactionListStyle}" BackgroundColor="Transparent" >
                     <microcharts:ChartView x:Name="chartView" HeightRequest ="350" WidthRequest="350" HorizontalOptions="Center" VerticalOptions="Center" Chart="{Binding GrafData}" />
                 </Frame>
-
                 <Frame CornerRadius="10"  Style="{StaticResource TransactionListStyle}"  >
                     <StackLayout Orientation="Horizontal">
                         <Label Style="{StaticResource TitleStyle}" Text="{Binding Path=TotalMessage}" />
@@ -43,7 +49,6 @@
                     </StackLayout>
                 </Frame>
             </StackLayout>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

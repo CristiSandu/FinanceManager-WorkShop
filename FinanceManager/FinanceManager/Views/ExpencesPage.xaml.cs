@@ -13,8 +13,13 @@ namespace FinanceManager.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExpencesPage : ContentPage
     {
+        public ObservableCollection<string> BillListFilters { get; set; } = new ObservableCollection<string>
+        {
+            "Income",
+            "Expenses",
+            "Global",
+        };
 
-        public ObservableCollection<string> BillListFilters { get; set; }
         public ObservableCollection<Models.Transaction> TransactionsList { get; set; }
 
         public Button CurrentCheck { get; set; } = new Button { Text = "-" };
@@ -22,19 +27,12 @@ namespace FinanceManager.Views
         public ExpencesPage()
         {
             InitializeComponent();
-
-            BillListFilters = new ObservableCollection<string>
-            {
-                "Income",
-                "Expenses",
-                "Global",
-            };
             BindingContext = this;
         }
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            
+
             if (CurrentCheck == null)
             {
                 TransactionsList = new ObservableCollection<Models.Transaction>(await Services.DatabaseConnection.GetGlobalTransactions());
@@ -52,7 +50,7 @@ namespace FinanceManager.Views
                 CurrentCheck.Style = (Style)Application.Current.Resources["MainButtonChecked"];
                 CurrentCheck = btn;
 
-                switch(btn.Text)
+                switch (btn.Text)
                 {
                     case "Income":
                         TransactionsList = new ObservableCollection<Models.Transaction>(await Services.DatabaseConnection.GetIncomeTransactions());

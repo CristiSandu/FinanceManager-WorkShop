@@ -14,20 +14,19 @@ namespace FinanceManager.Helpers
             set => Xamarin.Essentials.Preferences.Set(nameof(Theme), value);
         }
 
-
         public static void SetTheme()
         {
             switch (Theme)
             {
-                //default
+                // default
                 case 0:
                     App.Current.UserAppTheme = Xamarin.Forms.OSAppTheme.Unspecified;
                     break;
-                //light
+                // light
                 case 1:
                     App.Current.UserAppTheme = Xamarin.Forms.OSAppTheme.Light;
                     break;
-                //dark
+                // dark
                 case 2:
                     App.Current.UserAppTheme = Xamarin.Forms.OSAppTheme.Dark;
                     break;

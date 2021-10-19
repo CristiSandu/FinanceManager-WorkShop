@@ -74,6 +74,7 @@ namespace FinanceManager.Views
             {
                 SelectedAccount.Balance -= (float)Price;
             }
+
             await Services.DatabaseConnection.UpdateAccount(SelectedAccount);
 
             await Navigation.PopAsync();

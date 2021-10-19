@@ -4,9 +4,7 @@
              x:Class="FinanceManager.Views.ExpencesPage"
              xmlns:converter ="clr-namespace:FinanceManager.Convertors"
              Title="Expences"
-             BackgroundColor="{AppThemeBinding Light={StaticResource BackgroundLight}, Dark={StaticResource BackgroundDark}}"
-             >
-
+             BackgroundColor="{AppThemeBinding Light={StaticResource BackgroundLight}, Dark={StaticResource BackgroundDark}}">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -55,8 +53,12 @@
                             HorizontalOptions="EndAndExpand" 
                             WidthRequest="26"/>
                 </StackLayout>
-                <FlexLayout x:Name="filtersList" BindableLayout.ItemsSource="{Binding BillListFilters}" Wrap="Wrap"
-                            VerticalOptions="Start"  JustifyContent="Start"  AlignItems="Start" >
+                <FlexLayout x:Name="filtersList"
+                            BindableLayout.ItemsSource="{Binding BillListFilters}"
+                            Wrap="Wrap"
+                            VerticalOptions="Start"
+                            JustifyContent="Start"
+                            AlignItems="Start">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="5,5,5,5">

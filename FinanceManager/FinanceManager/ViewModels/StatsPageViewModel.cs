@@ -14,52 +14,8 @@ namespace FinanceManager.ViewModels
 {
     class StatsPageViewModel : BaseViewModel
     {
-        private string _currentAppliedFilter = "OverView";
-        public string CurrentAppliedFilter
-        {
-            get { return _currentAppliedFilter; }
-            set
-            {
-                if (_currentAppliedFilter != value)
-                {
-                    _currentAppliedFilter = value;
-                    ApplyeOverView.Execute(value);
-                    OnPropertyChanged(nameof(CurrentAppliedFilter));
-                }
-            }
-        }
 
-        private float _balance;
-        public float Balance
-        {
-            get { return _balance; }
-            set
-            {
-                if (_balance != value)
-                {
-                    _balance = value;
-                    OnPropertyChanged(nameof(Balance));
-                }
-            }
-        }
-
-        private string _totalMessage;
-        public string TotalMessage
-        {
-            get { return _totalMessage; }
-            set
-            {
-                if (_totalMessage != value)
-                {
-                    _totalMessage = value;
-                    OnPropertyChanged(nameof(TotalMessage));
-                }
-            }
-        }
-
-
-        public Chart GrafData { get; set; }
-
+        // Top Part 
         private DateTime _currentShowDate = DateTime.Now;
         public DateTime CurrentShowDate
         {
@@ -73,12 +29,7 @@ namespace FinanceManager.ViewModels
                 }
             }
         }
-
-        public ICommand NextMonth { get; private set; }
-        public ICommand PrevMonth { get; private set; }
-        public ICommand ApplyeOverView { get; private set; }
-
-
+        
         private Style _colorNextButton = (Style)Application.Current.Resources["MainButtonUnChecked"];
         public Style ColorNextButton
         {
@@ -107,10 +58,53 @@ namespace FinanceManager.ViewModels
             }
         }
 
+        // Chart Part 
+        private string _currentAppliedFilter = "OverView";
+        public string CurrentAppliedFilter
+        {
+            get { return _currentAppliedFilter; }
+            set
+            {
+                if (_currentAppliedFilter != value)
+                {
+                    _currentAppliedFilter = value;
+                    ApplyeOverView.Execute(value);
+                    OnPropertyChanged(nameof(CurrentAppliedFilter));
+                }
+            }
+        }
 
-        public float IncomeSum { get; set; }
-        public float ExpencesSum { get; set; }
+        public Chart GrafData { get; set; }
 
+        // Info Part 
+        private float _balance;
+        public float Balance
+        {
+            get { return _balance; }
+            set
+            {
+                if (_balance != value)
+                {
+                    _balance = value;
+                    OnPropertyChanged(nameof(Balance));
+                }
+            }
+        }
+
+        private string _totalMessage;
+        public string TotalMessage
+        {
+            get { return _totalMessage; }
+            set
+            {
+                if (_totalMessage != value)
+                {
+                    _totalMessage = value;
+                    OnPropertyChanged(nameof(TotalMessage));
+                }
+            }
+        }
+    
         private Color _balanceColor;
         public Color BalanceColor
         {
@@ -122,6 +116,14 @@ namespace FinanceManager.ViewModels
                 OnPropertyChanged(nameof(BalanceColor));
             }
         }
+
+        public float IncomeSum { get; set; }
+        public float ExpencesSum { get; set; }
+
+        // Commands 
+        public ICommand PrevMonth { get; private set; }
+        public ICommand NextMonth { get; private set; }
+        public ICommand ApplyeOverView { get; private set; }
 
         public async void ValueChangeMethod(string grafType)
         {
@@ -146,7 +148,7 @@ namespace FinanceManager.ViewModels
                 GrafData = await Services.ChartGenerator.GetIncomesGraf(CurrentShowDate);
                 Balance = IncomeSum;
                 BalanceColor = (Color)Application.Current.Resources["BackgroundDark"];
-                TotalMessage = "Total: ";
+                TotalMessage = "Total for Incoms: ";
             }
             else if (grafType == "Expences")
             {
@@ -154,7 +156,7 @@ namespace FinanceManager.ViewModels
                 Balance = ExpencesSum;
                 BalanceColor = (Color)Application.Current.Resources["BackgroundDark"];
 
-                TotalMessage = "Total: ";
+                TotalMessage = "Total for ExpencesCategory: ";
             }
 
 
@@ -193,6 +195,7 @@ namespace FinanceManager.ViewModels
 
                     if (CurrentShowDate.Month == dt.Month)
                         ColorNextButton = (Style)Application.Current.Resources["MainButtonChecked"];
+
                     ValueChangeMethod(CurrentAppliedFilter);
                 }
             });
@@ -212,7 +215,7 @@ namespace FinanceManager.ViewModels
                 }
             });
 
-            ApplyeOverView = new Command<string>(async value =>
+            ApplyeOverView = new Command<string>(value =>
                 {
                     ValueChangeMethod(value);
                 });
