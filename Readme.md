@@ -92,7 +92,7 @@ We will go through many steps. From the most introductory to the most complex an
 
 ![](/Images/layouts.png)
 ![](/Images/Picture5.png)
-
+## [💵 Finance Manager with .Net 6 Backend and SQL-Server databese](https://github.com/CristiSandu/Finance-Manager-SQLServer)
 ## 📖 Bibliography
 
 - [Xamarin Forms Documentation](https://docs.microsoft.com/en-us/xamarin/get-started/what-is-xamarin)
